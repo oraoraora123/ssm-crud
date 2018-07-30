@@ -6,7 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-
+	<properties> 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+	</properties>
 	<!--引入项目依赖的jar包 -->
 	<!-- SpringMVC、Spring -->
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
