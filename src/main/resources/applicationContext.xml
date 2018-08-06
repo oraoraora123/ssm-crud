@@ -21,21 +21,24 @@
 		<property name="driverClass" value="${jdbc.driverClass}"></property>
 		<property name="user" value="${jdbc.user}"></property>
 		<property name="password" value="${jdbc.password}"></property>
+	    <property name="testConnectionOnCheckin" value="false"/>
+	    <property name="testConnectionOnCheckout" value="true"/>
+	    <property name="idleConnectionTestPeriod" value="60"/>
 	</bean>
 	
 	<!-- 配置MyaBatis的整合 -->
 	<bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 指定mybatis全局配置文件 -->
-		<property name="configLocation" value="classpath:mybatis-config"></property>
-		<property name="dataSource" ref="PoolBackedDataSource"></property>
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="dataSource" ref="PooledDataSource"></property>
 		<!-- 指定mybatis,mapper文件位置 -->
-		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+		<property name="mapperLocations" value="classpath*:mapper/*-mapper.xml"></property>
 	</bean>
 	
 	<!-- 配置扫描器，将mybatis接口的实现加入到ioc容器中 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 扫描所有dao接口的实现，加入到IOC容器中 -->
-		<property name="basePackage" value="com.atguigu.crud"></property>
+		<property name="basePackage" value="com.atguigu.crud.dao"></property>
 	</bean>
 	
 	<!-- =========================================================================== -->
@@ -64,4 +67,5 @@
 	</tx:advice>
 	
 	<!-- Spring配置文件的核心点（数据源、与mybatis的整合、事务控制） -->
+	
 </beans>

@@ -96,17 +96,17 @@
 		</dependency>
 
 		<!-- 数据库连接池、驱动 -->
-		<!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
 		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1</version>
+		    <groupId>com.mchange</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.5.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.41</version>
+			<version>8.0.11</version>
 		</dependency>
 		<!-- （jstl，servlet-api，junit） -->
 		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
